@@ -16,6 +16,7 @@ return array(
     'Nyholm\\Psr7\\' => array($vendorDir . '/nyholm/psr7/src'),
     'Http\\Message\\MultipartStream\\' => array($vendorDir . '/php-http/multipart-stream-builder/src'),
     'Http\\Discovery\\' => array($vendorDir . '/php-http/discovery/src'),
+    'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
     'Composer\\Semver\\' => array($vendorDir . '/composer/semver/src'),
     'Auth0\\SDK\\' => array($vendorDir . '/auth0/auth0-php/src'),
 );

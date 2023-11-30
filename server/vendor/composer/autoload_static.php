@@ -26,6 +26,10 @@ class ComposerStaticInite651a3fbcdeee7ffa4de0906735aa6c8
             'Http\\Message\\MultipartStream\\' => 29,
             'Http\\Discovery\\' => 15,
         ),
+        'F' => 
+        array (
+            'Firebase\\JWT\\' => 13,
+        ),
         'C' => 
         array (
             'Composer\\Semver\\' => 16,
@@ -83,6 +87,10 @@ class ComposerStaticInite651a3fbcdeee7ffa4de0906735aa6c8
         'Http\\Discovery\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/discovery/src',
+        ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
         'Composer\\Semver\\' => 
         array (

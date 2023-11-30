@@ -8,18 +8,6 @@ class RequestHandler {
     }
 
     public function handleRequest($accessToken) {
-        // // Instantiate AccessTokenVerifier
-        // $AccessTokenVerifier = new AccessTokenVerifier();
-
-        // // Verify the received JWT token
-        // $isTokenValid = $AccessTokenVerifier->verifyAccessToken($accessToken);
-
-        // if (!$isTokenValid) {
-        //     // Token verification failed, handle unauthorized access
-        //     http_response_code(401); // Unauthorized
-        //     echo json_encode(["error" => "Unauthorized access"]);
-        //     exit;
-        // }
 
         $input = file_get_contents('php://input');
         $data = json_decode($input, true);
@@ -42,6 +30,9 @@ class RequestHandler {
             http_response_code(404); // Not Found
             echo "404 - Endpoint Not Found";
         }
+
+
+        
     }
 }
 

@@ -4,7 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react"; // Import Auth0 hooks
 const Calculator = () => {
   const [expression, setExpression] = useState("");
   const [result, setResult] = useState("");
-  const { getTokenSilently } = useAuth0(); // Retrieve Auth0 access token
+  const { getAccessTokenSilently, user } = useAuth0(); // Retrieve Auth0 access token
 
   const handleChange = (e) => {
     setExpression(e.target.value);
@@ -13,7 +13,7 @@ const Calculator = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const accessToken = await getTokenSilently(); // Get Auth0 access token
+      const accessToken = await getAccessTokenSilently(); // Get Auth0 access token
       console.log(accessToken);
       const response = await fetch("http://localhost:8000/api/calculate", {
         method: "POST",
