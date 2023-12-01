@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { useAuth0 } from "@auth0/auth0-react"; // Import Auth0 hooks
-import { resolve } from "url";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Calculator = () => {
   const [expression, setExpression] = useState("");
   const [result, setResult] = useState("");
-  const { getAccessTokenSilently, user } = useAuth0(); // Retrieve Auth0 access token
+  const { getAccessTokenSilently, user } = useAuth0();
+  const apiUri = process.env.REACT_APP_BACKEND_API;
 
   const handleChange = (e) => {
     setExpression(e.target.value);
   };
 
   const handleSubmit = async (e) => {
+    console.log(apiUri);
     e.preventDefault();
     try {
       const accessToken = await getAccessTokenSilently(); // Get Auth0 access token
-      const response = await fetch("http://localhost:8000/api/calculate", {
+      const response = await fetch("https://www.buckaroo.pcrz.xyz/api/calculate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -25,7 +26,6 @@ const Calculator = () => {
       });
       const data = await response.json();
       setResult(data.result);
-      // setResult("Please check expression");
     } catch (error) {
       console.error("Error:", error);
     }
@@ -42,7 +42,6 @@ const Calculator = () => {
         </div>
       </form>
       <div className="result">
-        {/* <p>Result: {result}</p> */}
         <div className="result-container">
           <p className="">{result ? result : "Reslut"}</p>
         </div>
