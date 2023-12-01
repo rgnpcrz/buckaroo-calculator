@@ -1,6 +1,6 @@
-# Project Name
+# BUCKAROO Calculator
 
-This repository contains the server and client applications for Project Name.
+This repository contains the server and client applications for BUCKAROO Calculator.
 
 ## Server
 
