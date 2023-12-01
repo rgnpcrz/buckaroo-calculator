@@ -3,7 +3,7 @@
 function handleCORS() {
     $allowedOrigins = [
         'http://localhost:3000',
-        // Add more domains as needed
+        'https://buckaroo-calculator.vercel.app/',
     ];
 
     // Check if the incoming request origin is allowed
