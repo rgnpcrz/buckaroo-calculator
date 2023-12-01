@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react"; // Import Auth0 hooks
+import { resolve } from "url";
 
 const Calculator = () => {
   const [expression, setExpression] = useState("");
@@ -24,8 +25,8 @@ const Calculator = () => {
         body: JSON.stringify({ expression }),
       });
       const data = await response.json();
-      // setResult(data.result);
-      setResult("Please check expression");
+      setResult(data.result);
+      // setResult("Please check expression");
     } catch (error) {
       console.error("Error:", error);
     }
@@ -44,7 +45,7 @@ const Calculator = () => {
       <div className="result">
         {/* <p>Result: {result}</p> */}
         <div className="result-container">
-          <p className="">{result}</p>
+          <p className="">{result ? result : "Reslut"}</p>
         </div>
       </div>
     </div>

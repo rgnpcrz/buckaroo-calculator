@@ -29,8 +29,24 @@ h1 {
   padding: 40px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
   border-radius: 25px;
+  margin-bottom: 150px;
 }
-
+.relative {
+  position: relative;
+}
+.icon {
+  position: absolute;
+  top: 0;
+  left: 10;
+  width: 35px;
+  height: 35px;
+  margin-top: -35px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+}
 .button {
   all: unset;
   padding: 12px 24px;
@@ -56,4 +72,23 @@ h1 {
   border-radius: 17px;
   background-color: #f3f3f3;
   border: 2px solid #c1d83a;
+}
+
+.logout-button {
+  /* margin-top: 40px; */
+  font-size: small;
+  padding: 6px 12px;
+}
+
+.user-div {
+  display: flex;
+
+  justify-content: space-between;
+  /* align-self: center; */
+  align-self: center;
+  margin-bottom: 35px;
+}
+
+.title {
+  margin-bottom: 45px;
 }
