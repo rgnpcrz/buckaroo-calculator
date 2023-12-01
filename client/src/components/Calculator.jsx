@@ -15,7 +15,6 @@ const Calculator = () => {
     e.preventDefault();
     try {
       const accessToken = await getAccessTokenSilently(); // Get Auth0 access token
-      console.log(accessToken);
       const response = await fetch("http://localhost:8000/api/calculate", {
         method: "POST",
         headers: {
