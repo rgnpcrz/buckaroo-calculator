@@ -12,15 +12,14 @@ const Calculator = () => {
   };
 
   const handleSubmit = async (e) => {
-    console.log(apiUri);
     e.preventDefault();
     try {
-      const accessToken = await getAccessTokenSilently(); // Get Auth0 access token
-      const response = await fetch("https://www.buckaroo.pcrz.xyz/api/calculate", {
+      // const accessToken = await getAccessTokenSilently(); // Get Auth0 access token
+      const response = await fetch("https:/buckaroo.pcrz.xyz/api/calculate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${accessToken}`, // Include JWT token in Authorization header
+          // "Authorization": `Bearer ${accessToken}`, // Include JWT token in Authorization header
         },
         body: JSON.stringify({ expression }),
       });
