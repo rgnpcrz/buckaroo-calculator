@@ -14,6 +14,7 @@ function handleCORS() {
         header('Access-Control-Max-Age: 86400');    // Cache preflight for 1 day
     }
 
+    
     // Access-Control headers are received during OPTIONS requests
     if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
         if (isset($_SERVER['HTTPS_ACCESS_CONTROL_REQUEST_METHOD'])) {
