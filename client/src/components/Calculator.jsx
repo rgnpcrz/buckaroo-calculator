@@ -15,7 +15,7 @@ const Calculator = () => {
     e.preventDefault();
     try {
       // const accessToken = await getAccessTokenSilently(); // Get Auth0 access token
-      const response = await fetch("https:/buckaroo.pcrz.xyz/api/calculate", {
+      const response = await fetch("http://localhost:8000/api/calculate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
