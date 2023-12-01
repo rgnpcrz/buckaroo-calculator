@@ -1,6 +1,6 @@
 import "./App.css";
-import Calculator from "./Calculator";
 import { useAuth0 } from "@auth0/auth0-react";
+import Calculator from "./components/Calculator";
 function App() {
   const { user, isAuthenticated, isLoading, loginWithRedirect, logout } = useAuth0();
   const logoutWithRedirect = () =>
@@ -10,17 +10,33 @@ function App() {
       },
     });
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return (
+      <div className="calculator-container">
+        <div className="calculator">Loading ...</div>
+      </div>
+    );
   }
   if (!isAuthenticated) {
-    return <button onClick={() => loginWithRedirect()}>Log In</button>;
+    return (
+      <div className="calculator-container">
+        <div className="calculator">
+          <button className="button login-button" onClick={() => loginWithRedirect()}>
+            Log In
+          </button>
+        </div>
+      </div>
+    );
   }
   if (isAuthenticated) {
     return (
-      <div className="App">
-        <button onClick={() => logoutWithRedirect()}>Log Out</button>
-        <h1>Calculator App</h1>
-        <Calculator />
+      <div className="App calculator-container">
+        <div className="calculator">
+          <button className="button logout-button" onClick={() => logoutWithRedirect()}>
+            Log Out
+          </button>
+          <h1>Calculator App</h1>
+          <Calculator />
+        </div>
       </div>
     );
   }

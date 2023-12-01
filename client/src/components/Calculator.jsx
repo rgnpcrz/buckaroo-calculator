@@ -24,7 +24,8 @@ const Calculator = () => {
         body: JSON.stringify({ expression }),
       });
       const data = await response.json();
-      setResult(data.result);
+      // setResult(data.result);
+      setResult("Please check expression");
     } catch (error) {
       console.error("Error:", error);
     }
@@ -33,10 +34,19 @@ const Calculator = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={expression} onChange={handleChange} />
-        <button type="submit">Calculate</button>
+        <div className="expression-input-container">
+          <input className="expression-input" type="text" value={expression} placeholder="Type math expresion here" onChange={handleChange} />
+          <button className="button" type="submit">
+            Enter
+          </button>
+        </div>
       </form>
-      <p>Result: {result}</p>
+      <div className="result">
+        {/* <p>Result: {result}</p> */}
+        <div className="result-container">
+          <p className="">{result}</p>
+        </div>
+      </div>
     </div>
   );
 };
