@@ -20,7 +20,7 @@ function App() {
       <>
         <div className="calculator-container">
           <div className="calculator">
-            <img width={200} src="http://localhost:3000/buckaroo.jpg"></img>
+            <img width={200} src="https://buckaroo.pcrz.xyz/buckaroo.jpg"></img>
             <h3>Welcome to Calculator</h3>
             <button className="button login-button" onClick={() => loginWithRedirect()}>
               Log In
@@ -35,7 +35,7 @@ function App() {
       <div className="App calculator-container ">
         <div className="calculator relative">
           <div className="icon">
-            <img width={20} src="http://localhost:3000/favicon-32x32.png"></img>
+            <img width={20} src="https://buckaroo.pcrz.xyz/favicon-32x32.png"></img>
           </div>
           <div className="user-div">
             <div>{user.email}</div>
