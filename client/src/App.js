@@ -1,7 +1,6 @@
 import "./App.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import Calculator from "./components/Calculator";
-import { useEffect } from "react";
 import Loading from "./components/Loading";
 function App() {
   const { user, isAuthenticated, isLoading, loginWithRedirect, logout } = useAuth0();
